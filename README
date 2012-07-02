@@ -1,3 +1,6 @@
+// This fork from bantherewind's kinect sdk removes some threading issues and handles skeleton data a little bit different
+
+
 This block wraps Microsoft official SDK for the Kinect 
 device.
 
