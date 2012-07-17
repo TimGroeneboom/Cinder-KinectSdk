@@ -54,7 +54,7 @@ namespace KinectSdk
 	typedef NUI_SKELETON_POSITION_INDEX		JointName;
 
 	struct Skeleton{
-		int								mTrackingId;
+		std::string						mTrackingId;
 
 		std::map<JointName, ci::Vec3f>	mJointList;
 	};

@@ -587,7 +587,7 @@ namespace KinectSdk
 								// Get skeleton data
 								_NUI_SKELETON_DATA skeletonData = *( skeletonFrame.SkeletonData + i );
 
-								mSkeletons[ i ].mTrackingId = skeletonData.dwTrackingID;
+								mSkeletons[ i ].mTrackingId = ci::toString<int>( (int)skeletonData.dwTrackingID );
 								// Set joint data
 								for ( int32_t j = 0; j < (int32_t)NUI_SKELETON_POSITION_COUNT; j++ ) {
 									Vector4 point = *( skeletonData.SkeletonPositions + j );
