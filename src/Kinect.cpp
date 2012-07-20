@@ -588,6 +588,7 @@ namespace KinectSdk
 								_NUI_SKELETON_DATA skeletonData = *( skeletonFrame.SkeletonData + i );
 
 								mSkeletons[ i ].mTrackingId = ci::toString<int>( (int)skeletonData.dwTrackingID );
+								mSkeletons[ i ].mPosition	= Vec3f( skeletonData.Position.x, skeletonData.Position.y, skeletonData.Position.z );
 								// Set joint data
 								for ( int32_t j = 0; j < (int32_t)NUI_SKELETON_POSITION_COUNT; j++ ) {
 									Vector4 point = *( skeletonData.SkeletonPositions + j );
