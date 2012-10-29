@@ -355,6 +355,15 @@ namespace KinectSdk
 		}
 	}
 
+	ci::Vec2i Kinect::getColorPixelCoordinateFromDepthPixel( ci::Vec2i input ){
+		long ix = 0, iy = 0;
+		mSensor->NuiImageGetColorPixelCoordinatesFromDepthPixel(	NUI_IMAGE_RESOLUTION_640x480, NULL, 
+																	input.x, input.y, mDepthSurface.getPixel( input ).r,
+																	&ix, &iy); 
+
+		return Vec2i( ix, iy );
+	}
+
 	void Kinect::deactivateUsers()
 	{
 		for ( uint32_t i = 0; i < NUI_SKELETON_COUNT; i++ ) {
@@ -838,7 +847,6 @@ namespace KinectSdk
 
 	Kinect::Pixel16u Kinect::shortToPixel( uint16_t value )
 	{
-
 		// Extract depth and user values
 		uint16_t depth = 0xFFFF - 0x10000 * ( ( value & 0xFFF8 ) >> 3 ) / 0x0FFF;
 		uint16_t user = value & 7;

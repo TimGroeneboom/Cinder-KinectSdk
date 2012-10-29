@@ -36,7 +36,7 @@
 
 // Includes
 #include <algorithm>
-#include "AudioInput.h"
+//#include "AudioInput.h"
 #include "boost/algorithm/string.hpp"
 #include "cinder/app/AppBasic.h"
 #include "cinder/Camera.h"
@@ -97,7 +97,7 @@ private:
 	// Audio input
 	int32_t								mCallbackId;
 	float *								mData;
-	AudioInputRef						mInput;
+	//AudioInputRef						mInput;
 
 	// Kinect
 	ci::Surface16u						mDepthSurface;
@@ -241,10 +241,10 @@ void KinectApp::draw()
 }
 
 // Called when audio buffer is full
-void KinectApp::onAudioData( float *data, int32_t size )
-{
-	mData = data;
-}
+//void KinectApp::onAudioData( float *data, int32_t size )
+//{
+//	mData = data;
+//}
 
 // Receives depth data
 void KinectApp::onDepthData( Surface16u surface, const DeviceOptions &deviceOptions )
