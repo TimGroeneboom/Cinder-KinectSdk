@@ -355,13 +355,13 @@ namespace KinectSdk
 		}
 	}
 
-	ci::Vec2i Kinect::getColorPixelCoordinateFromDepthPixel( ci::Vec2i input ){
-		long ix = 0, iy = 0;
-		mSensor->NuiImageGetColorPixelCoordinatesFromDepthPixel(	NUI_IMAGE_RESOLUTION_640x480, NULL, 
-																	input.x, input.y, mDepthSurface.getPixel( input ).r,
-																	&ix, &iy); 
+	ci::Vec2i Kinect::getColorPixelCoordinateFromDepthPixel( ci::Vec2i & input ){
+		long x,y;
 
-		return Vec2i( ix, iy );
+		mSensor->NuiImageGetColorPixelCoordinatesFromDepthPixel(	mDeviceOptions.getVideoResolution(), NULL, 
+																	input.x, input.y, mDepthSurface.getPixel( input ).r,
+																	&x, &y); 
+		return Vec2i( x, y );
 	}
 
 	void Kinect::deactivateUsers()
