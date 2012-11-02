@@ -268,7 +268,7 @@ namespace KinectSdk
 		int_fast8_t						getTransform() const;
 		//! Sets skeleton transform type.
 		void							setTransform( int_fast8_t transform = TRANSFORM_DEFAULT );
-		ci::Vec2i						getColorPixelCoordinateFromDepthPixel( ci::Vec2i & input );
+		ci::Vec2i						getColorPixelCoordinateFromDepthPixel( ci::Vec2i & input, NUI_IMAGE_RESOLUTION videoResolution, NUI_IMAGE_RESOLUTION depthResolution );
 	private:
 		typedef boost::signals2::connection			Callback;
 		typedef std::shared_ptr<Callback>			CallbackRef;
